@@ -83,6 +83,7 @@ func Test() {
 
 	// Send the string "10,20,30\n\r" to the serial port
 	n, err := port.Write([]byte{0x00, 0x01, 0x04, 0x01, 0x01, 0xFA, 0x04})
+	fmt.Printf("Sent %v bytes\n", n)
 	n, err = port.Write([]byte{0x00, 0x01, 0x04, 0x00, 0x13, 0xE9, 0x04})
 	if err != nil {
 		log.Fatal(err)
